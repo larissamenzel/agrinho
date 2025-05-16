@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Abelhas Jataí</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer>
+    function mostrarAba(abaId) {
+      const secoes = document.querySelectorAll('.aba');
+      secoes.forEach(secao => {
+        secao.style.display = 'none';
+      });
+      document.getElementById(abaId).style.display = 'block';
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      mostrarAba('sobre'); // mostrar aba padrão
+    });
+  </script>
+</head>
+<body>
+  <header>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Tetragonisca_angustula.jpg/640px-Tetragonisca_angustula.jpg" alt="Abelha Jataí" class="abelha-img">
+    <h1>Abelhas Jataí</h1>
+    <nav>
+      <ul>
+        <li><a href="#" onclick="mostrarAba('sobre')">Sobre</a></li>
+        <li><a href="#" onclick="mostrarAba('curiosidades')">Curiosidades</a></li>
+        <li><a href="#" onclick="mostrarAba('dicas')">Dicas</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="sobre" class="aba">
+      <h2>Sobre as Abelhas Jataí</h2>
+      <p>A abelha Jataí (Tetragonisca angustula) é uma espécie sem ferrão, nativa da América do Sul. É muito apreciada por meliponicultores devido ao seu comportamento dócil e à qualidade de seu mel.</p>
+      <p>Ela mede cerca de 5mm e vive em colônias organizadas com rainha, operárias e zangões. Seu mel é utilizado para fins medicinais e possui sabor leve e aromático.</p>
+      <p>Essas abelhas desempenham papel vital na polinização de flores e hortaliças, contribuindo significativamente para a biodiversidade e produção agrícola.</p>
+    </section>
+
+    <section id="curiosidades" class="aba">
+      <h2>Curiosidades</h2>
+      <ul>
+        <li>As abelhas Jataí fazem a entrada da colmeia com um tubo de cerume, que funciona como “porta de segurança”.</li>
+        <li>Mesmo sem ferrão, elas defendem a colmeia mordendo e colando os invasores com resina.</li>
+        <li>Vivem em colmeias com até 5.000 indivíduos.</li>
+        <li>Seu nome vem da língua tupi e significa "abelha verdadeira".</li>
+        <li>Produzem menos mel que abelhas com ferrão, mas de qualidade superior.</li>
+        <li>São polinizadoras importantes de frutas como maracujá, pitanga, acerola e goiaba.</li>
+      </ul>
+    </section>
+
+    <section id="dicas" class="aba">
+      <h2>Dicas para Criar Abelhas Jataí</h2>
+      <ul>
+        <li>Adquira colônias de criadores autorizados para evitar o tráfico ilegal de abelhas.</li>
+        <li>Coloque a colmeia em local sombreado, seco e protegido da chuva e vento.</li>
+        <li>Plante flores nativas e frutíferas para fornecer alimento às abelhas.</li>
+        <li>Evite usar pesticidas ou produtos químicos próximos às colmeias.</li>
+        <li>Observe a atividade da entrada: movimento intenso indica colônia saudável.</li>
+        <li>Evite abrir a colmeia com frequência, isso pode estressar as abelhas.</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 - Projeto Educativo sobre Abelhas Jataí</p>
+  </footer>
+</body>
+</html>
