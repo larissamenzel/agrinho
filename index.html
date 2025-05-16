@@ -1,72 +1,191 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Abelhas Jataí</title>
-  <link rel="stylesheet" href="style.css">
-  <script defer>
-    function mostrarAba(abaId) {
-      const secoes = document.querySelectorAll('.aba');
-      secoes.forEach(secao => {
-        secao.style.display = 'none';
-      });
-      document.getElementById(abaId).style.display = 'block';
-    }
-
-    document.addEventListener('DOMContentLoaded', () => {
-      mostrarAba('sobre'); // mostrar aba padrão
-    });
-  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Abelhas Nativas</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
 </head>
 <body>
   <header>
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Tetragonisca_angustula.jpg/640px-Tetragonisca_angustula.jpg" alt="Abelha Jataí" class="abelha-img">
-    <h1>Abelhas Jataí</h1>
+    <img
+      src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Tetragonisca_angustula.jpg/640px-Tetragonisca_angustula.jpg"
+      alt="Abelha Jataí"
+      class="abelha-img"
+    />
+    <h1>Abelhas Nativas</h1>
     <nav>
       <ul>
-        <li><a href="#" onclick="mostrarAba('sobre')">Sobre</a></li>
-        <li><a href="#" onclick="mostrarAba('curiosidades')">Curiosidades</a></li>
-        <li><a href="#" onclick="mostrarAba('dicas')">Dicas</a></li>
+        <li><a href="#" data-aba="jatai" class="aba-especie ativo">Jataí</a></li>
+        <li><a href="#" data-aba="africana" class="aba-especie">Africana</a></li>
+        <li><a href="#" data-aba="europeia" class="aba-especie">Europeia</a></li>
+        <li><a href="#" data-aba="mandasaia" class="aba-especie">Mandasaia</a></li>
+        <li><a href="#" data-aba="urucu" class="aba-especie">Uruçu</a></li>
       </ul>
     </nav>
+
+    <!-- Botão hambúrguer para abrir o menu lateral -->
+    <div id="menu-hamburguer" title="Abrir menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
   </header>
 
   <main>
-    <section id="sobre" class="aba">
-      <h2>Sobre as Abelhas Jataí</h2>
-      <p>A abelha Jataí (Tetragonisca angustula) é uma espécie sem ferrão, nativa da América do Sul. É muito apreciada por meliponicultores devido ao seu comportamento dócil e à qualidade de seu mel.</p>
-      <p>Ela mede cerca de 5mm e vive em colônias organizadas com rainha, operárias e zangões. Seu mel é utilizado para fins medicinais e possui sabor leve e aromático.</p>
-      <p>Essas abelhas desempenham papel vital na polinização de flores e hortaliças, contribuindo significativamente para a biodiversidade e produção agrícola.</p>
+    <!-- Conteúdos por espécie e tópico -->
+    <section id="jatai" class="aba-especie-conteudo ativo">
+      <div data-topico="info" class="conteudo-topico ativo">
+        <h2>Informações Gerais - Jataí</h2>
+        <p>
+          A abelha Jataí (Tetragonisca angustula) é uma espécie sem ferrão,
+          nativa da América do Sul. É muito apreciada por meliponicultores
+          devido ao seu comportamento dócil e à qualidade de seu mel.
+        </p>
+        <p>
+          Ela mede cerca de 5mm e vive em colônias organizadas com rainha,
+          operárias e zangões. Seu mel é utilizado para fins medicinais e
+          possui sabor leve e aromático.
+        </p>
+        <p>
+          Essas abelhas desempenham papel vital na polinização de flores e
+          hortaliças, contribuindo significativamente para a biodiversidade e
+          produção agrícola.
+        </p>
+      </div>
+      <div data-topico="curiosidades" class="conteudo-topico">
+        <h2>Curiosidades - Jataí</h2>
+        <ul>
+          <li>Fazem a entrada da colmeia com um tubo de cerume, que funciona como “porta de segurança”.</li>
+          <li>Mesmo sem ferrão, defendem a colmeia mordendo e colando invasores com resina.</li>
+          <li>Vivem em colônias com até 5.000 indivíduos.</li>
+          <li>Nome vem da língua tupi e significa "abelha verdadeira".</li>
+          <li>Produzem menos mel que abelhas com ferrão, mas de qualidade superior.</li>
+          <li>Polinizam frutas como maracujá, pitanga, acerola e goiaba.</li>
+        </ul>
+      </div>
+      <div data-topico="cuidados" class="conteudo-topico">
+        <h2>Cuidados para Criar Abelhas Jataí</h2>
+        <ul>
+          <li>Adquira colônias de criadores autorizados para evitar tráfico ilegal.</li>
+          <li>Coloque a colmeia em local sombreado, seco e protegido da chuva e vento.</li>
+          <li>Plante flores nativas e frutíferas para alimentação.</li>
+          <li>Evite pesticidas ou produtos químicos próximos às colmeias.</li>
+          <li>Observe a atividade da entrada: movimento intenso indica colônia saudável.</li>
+          <li>Evite abrir a colmeia com frequência para não estressar as abelhas.</li>
+        </ul>
+      </div>
+      <div data-topico="fotos" class="conteudo-topico">
+        <h2>Fotos das Colmeias - Jataí</h2>
+        <div class="galeria">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Tetragonisca_angustula.jpg/320px-Tetragonisca_angustula.jpg" alt="Colmeia Jataí 1" />
+          <img src="https://upload.wikimedia.org/wikipedia/commons/6/66/Colmeia_de_abelhas_sem_ferr%C3%A3o.JPG" alt="Colmeia Jataí 2" />
+        </div>
+      </div>
     </section>
 
-    <section id="curiosidades" class="aba">
-      <h2>Curiosidades</h2>
-      <ul>
-        <li>As abelhas Jataí fazem a entrada da colmeia com um tubo de cerume, que funciona como “porta de segurança”.</li>
-        <li>Mesmo sem ferrão, elas defendem a colmeia mordendo e colando os invasores com resina.</li>
-        <li>Vivem em colmeias com até 5.000 indivíduos.</li>
-        <li>Seu nome vem da língua tupi e significa "abelha verdadeira".</li>
-        <li>Produzem menos mel que abelhas com ferrão, mas de qualidade superior.</li>
-        <li>São polinizadoras importantes de frutas como maracujá, pitanga, acerola e goiaba.</li>
-      </ul>
+    <!-- Outras espécies seguem o mesmo modelo, só com conteúdos diferentes -->
+    <section id="africana" class="aba-especie-conteudo">
+      <div data-topico="info" class="conteudo-topico ativo">
+        <h2>Informações Gerais - Africana</h2>
+        <p>A abelha Africana é uma abelha com ferrão, conhecida pela sua resistência e agressividade, mas também muito eficiente na polinização.</p>
+        <p>Ela se adapta bem a diferentes climas e é bastante utilizada na agricultura para aumentar a produtividade das culturas.</p>
+        <p>É fundamental ter cuidados especiais ao manejar essa espécie devido à sua defesa ativa.</p>
+      </div>
+      <div data-topico="curiosidades" class="conteudo-topico">
+        <h2>Curiosidades - Africana</h2>
+        <ul>
+          <li>Origem na África subsaariana.</li>
+          <li>Conhecida por sua agressividade para defender a colmeia.</li>
+          <li>Rápida reprodução e colonização.</li>
+          <li>É uma das abelhas com maior resistência a doenças.</li>
+          <li>Participa fortemente da polinização em regiões tropicais.</li>
+        </ul>
+      </div>
+      <div data-topico="cuidados" class="conteudo-topico">
+        <h2>Cuidados para Criar Abelhas Africanas</h2>
+        <ul>
+          <li>Mantenha colmeias em locais protegidos e de difícil acesso.</li>
+          <li>Use equipamentos de proteção ao manejar.</li>
+          <li>Realize inspeções periódicas para controle de doenças.</li>
+          <li>Evite movimentar as colmeias frequentemente.</li>
+          <li>Forneça alimentação suplementar em períodos secos.</li>
+        </ul>
+      </div>
+      <div data-topico="fotos" class="conteudo-topico">
+        <h2>Fotos das Colmeias - Africana</h2>
+        <div class="galeria">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/5/54/Africanized_bee.jpg" alt="Colmeia Africana 1" />
+          <img src="https://upload.wikimedia.org/wikipedia/commons/8/8f/African_honey_bee.jpg" alt="Colmeia Africana 2" />
+        </div>
+      </div>
     </section>
 
-    <section id="dicas" class="aba">
-      <h2>Dicas para Criar Abelhas Jataí</h2>
-      <ul>
-        <li>Adquira colônias de criadores autorizados para evitar o tráfico ilegal de abelhas.</li>
-        <li>Coloque a colmeia em local sombreado, seco e protegido da chuva e vento.</li>
-        <li>Plante flores nativas e frutíferas para fornecer alimento às abelhas.</li>
-        <li>Evite usar pesticidas ou produtos químicos próximos às colmeias.</li>
-        <li>Observe a atividade da entrada: movimento intenso indica colônia saudável.</li>
-        <li>Evite abrir a colmeia com frequência, isso pode estressar as abelhas.</li>
-      </ul>
-    </section>
+    <!-- Pode adicionar as outras espécies seguindo esse padrão -->
   </main>
 
-  <footer>
-    <p>&copy; 2025 - Projeto Educativo sobre Abelhas Jataí</p>
-  </footer>
+  <aside id="menu-lateral">
+    <h3>Conteúdos</h3>
+    <ul>
+      <li><a href="#" data-topico="info" class="topico-link ativo">Informações Gerais</a></li>
+      <li><a href="#" data-topico="curiosidades" class="topico-link">Curiosidades</a></li>
+      <li><a href="#" data-topico="cuidados" class="topico-link">Cuidados</a></li>
+      <li><a href="#" data-topico="fotos" class="topico-link">Fotos das Colmeias</a></li>
+    </ul>
+  </aside>
 </body>
 </html>
+<aside id="menu-lateral">
+  <h3>Conteúdos</h3>
+  <ul>
+    <li><a href="#" data-topico="info" class="topico-link ativo">Informações Gerais</a></li>
+    <li><a href="#" data-topico="curiosidades" class="topico-link">Curiosidades</a></li>
+    <li><a href="#" data-topico="cuidados" class="topico-link">Cuidados</a></li>
+    <li><a href="#" data-topico="fotos" class="topico-link">Fotos das Colmeias</a></li>
+  </ul>
+
+  <h3>Tabela Comparativa</h3>
+  <table id="tabela-comparativa">
+    <thead>
+      <tr>
+        <th>Espécie</th>
+        <th>Tamanho Médio (mm)</th>
+        <th>Abelhas na Colmeia</th>
+        <th>Observações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Jataí</td>
+        <td>~5</td>
+        <td>Até 5.000</td>
+        <td>Sem ferrão, mel aromático</td>
+      </tr>
+      <tr>
+        <td>Africana</td>
+        <td>~12</td>
+        <td>Até 30.000</td>
+        <td>Com ferrão, agressiva</td>
+      </tr>
+      <tr>
+        <td>Europeia</td>
+        <td>~12</td>
+        <td>Até 50.000</td>
+        <td>Com ferrão, criada em colmeias</td>
+      </tr>
+      <tr>
+        <td>Mandasaia</td>
+        <td>~6</td>
+        <td>Até 8.000</td>
+        <td>Sem ferrão, polinizadora eficiente</td>
+      </tr>
+      <tr>
+        <td>Uruçu</td>
+        <td>~10</td>
+        <td>Até 10.000</td>
+        <td>Sem ferrão, mel medicinal</td>
+      </tr>
+    </tbody>
+  </table>
+</aside>
